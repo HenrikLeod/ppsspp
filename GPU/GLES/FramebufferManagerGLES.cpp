@@ -98,6 +98,8 @@ void FramebufferManagerGLES::ClearBuffer(bool keepState) {
 		glstate.colorMask.restore();
 		glstate.stencilFunc.restore();
 		glstate.stencilMask.restore();
+	} else {
+		gstate_c.Dirty(DIRTY_BLEND_STATE | DIRTY_DEPTHSTENCIL_STATE | DIRTY_VIEWPORTSCISSOR_STATE);
 	}
 }
 
